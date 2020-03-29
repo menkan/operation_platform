@@ -1,0 +1,68 @@
+
+@font-face {
+    font-family: 'iconfont';  /* project id 1543546 */
+    src: url('//at.alicdn.com/t/font_1543546_djfe7apr7t.eot');
+    src: url('//at.alicdn.com/t/font_1543546_djfe7apr7t.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1543546_djfe7apr7t.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1543546_djfe7apr7t.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1543546_djfe7apr7t.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1543546_djfe7apr7t.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.editor-wrapper {
+    padding: 10px;
+    background-color: #fff;
+    .menubar {
+        button{
+        &.menubar__button,
+        &.menububble__button{
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            font-weight: 100;
+            background-color: #fff;
+            border: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: transparent; /* For some Androids,个人感觉是低版本的安卓，4.0以下 */ 
+            // tap-highlight-color:rgba(0, 0, 0, 0);
+            outline:none; 
+            border-radius: 4px;
+        }
+        &.menububble__button {
+            width: auto!important;
+            height: 30px;
+        }
+
+        &.is-active {
+            // font-weight: 700;
+            background-color: rgba(0,0,0,.1);
+        }
+        }
+    }
+    // editor 文本框
+    .editor__content {
+        background-color: #eee;
+
+        .tableWrapper {
+            table {
+                border-collapse: separate;
+                border-spacing: 0;
+                border: 1px solid #000;
+                tr {
+                    border-bottom: 1px solid #000;
+                }
+                td {
+                    border: 1px solid #000;
+                }
+            }
+        }
+    }
+}
