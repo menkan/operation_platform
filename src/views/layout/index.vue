@@ -3,7 +3,7 @@
     <unheader />
     <el-container>
       <el-aside width="200px">
-        <unside />
+        <ul-side />
       </el-aside>
       <el-main>
         <unbreadcrumb />
@@ -20,14 +20,14 @@
 import unheader from "./components/head";
 import unfooter from "./components/footer";
 import unbreadcrumb from "./components/breadcrumb";
-import unside from "./components/side";
+import ulSide from "./components/side/index";
 
 export default {
   components: {
     unheader,
     unfooter,
     unbreadcrumb,
-    unside
+    ulSide
   }
 };
 </script>
@@ -35,12 +35,14 @@ export default {
 <style lang="less">
 .layout_wrapper {
   height: 100%;
+
   .el-header,
   .el-footer {
     background-color: #b3c0d1;
     color: #333;
     text-align: center;
   }
+
   .el-footer {
     font-size: 12px;
     text-align: left;

@@ -14,27 +14,12 @@ const Error = () => import("@/views/error");
 Vue.use(VueRouter);
 
 const routes = [
-  // {
-  //   path: "/",
-  //   name: "Home",
-  //   component: Home
-  // },
   {
     path: "/",
     name: "home",
     component: Index,
     redirect: "/index"
   },
-
-  // {
-  //   path: "/about",
-  //   name: "About",
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/About.vue")
-  // }
   {
     path: "/layout",
     name: "layout",
@@ -43,12 +28,11 @@ const routes = [
 
   {
     path: "/index",
-    name: "首页",
     component: Layout,
     isShow: true,
     children: [
       {
-        path: "/index",
+        path: "",
         name: "首页",
         component: Index,
         isShow: true
@@ -63,7 +47,7 @@ const routes = [
     isShow: true,
     children: [
       {
-        path: "/edit-config",
+        path: "index",
         name: "博客配置",
         // component: _import('@/views/edit-config/index'),
         component: EditConfig,
@@ -73,10 +57,38 @@ const routes = [
   },
 
   {
+    // 博客增删改查内容
+    path: "/text1",
+    name: "测试1",
+    component: Layout,
+    isShow: true,
+    children: [
+      {
+        path: "index",
+        name: "测试1-1",
+        component: () => import("@/views/test/test1"),
+        isShow: true
+      },
+      {
+        path: "index2",
+        name: "测试1-2",
+        component: () => import("@/views/test/test2"),
+        isShow: true
+      },
+      {
+        path: "index3",
+        name: "测试1-3",
+        component: () => import("@/views/test/test3"),
+        isShow: true
+      }
+    ]
+  },
+
+  {
     // 404 页面重定向
     path: "*",
     name: "error",
-    alias: "404",
+    alias: "/404",
     // redirect: '/404', 重定向与否都可以
     component: Error
   }
